@@ -1,10 +1,13 @@
 locals {
-  tags = {
-    CID         = "${var.cid}"
-    Environment = "${var.environment}"
-    Module      = "amicopy"
-    Name        = "${var.name}"
-    Owner       = "${var.owner}"
-    Project     = "${var.project}"
-  }
+  name = "${var.tags["Environment"]}-amicopy"
+}
+
+locals {
+  tags = "${merge(
+    var.tags,
+    map(
+      "Module", "amicopy",
+      "Name", "${local.name}"
+    )
+  )}"
 }

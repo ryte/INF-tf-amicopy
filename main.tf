@@ -26,5 +26,5 @@ resource "aws_ami_copy" "ami" {
   name              = "${data.aws_ami.ami.id}"
   source_ami_id     = "${data.aws_ami.ami.id}"
   source_ami_region = "${data.aws_region.current.id}"
-  tags              = "${merge(local.tags)}"
+  tags              = "${local.tags}"
 }
