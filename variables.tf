@@ -1,5 +1,6 @@
-variable "cid" {}
-variable "environment" {}
 variable "name" {}
-variable "owner" {}
-variable "project" {}
+variable "tags" {
+  type = "map"
+  description = "common tags to add to the ressources"
+  default = {}
+}
