@@ -1,5 +1,4 @@
-INF-tf-datadog
-===========
+# INF-tf-amicopy
 
 Terraform module for cloning the current aws AMI
 every EC2 machine is built on top of that ami, so every machine has the same base image
@@ -9,18 +8,17 @@ every EC2 machine is built on top of that ami, so every machine has the same bas
 This project is [internal open source](https://en.wikipedia.org/wiki/Inner_source)
 and currently maintained by the [INF](https://github.com/orgs/onpage-org/teams/inf).
 
-Module Input Variables
-----------------------
+## Module Input Variables
 
-#### Required
-- `name` - the ami name to copy, special characters like "*" are allowed
-- `tags` - a map of key-value pairs which are used as tags for all ressources within the module (and allow tags)
+-  `name`
+    -  __description__: the ami name to copy, special characters like "*" are allowed
+    -  __type__: `string`
+-  `tags`
+    -  __description__: a map of key-value pairs which are used as tags for all ressources within the module (and allow tags)
+    -  __type__: `map`
+    -  __default__: {}
 
-#### Optional
-None
-
-Usage
------
+## Usage
 
 ```hcl
 module "ecs_optimized" {
@@ -30,21 +28,23 @@ module "ecs_optimized" {
 }
 ```
 
-Outputs
-=======
-- `id` - the ami id, from the ami which is created within the account and the current region
+## Outputs
 
-Authors
-=======
+-  `id`
+    -  __description__: the ami id, from the ami which is created within the account and the current region
+    -  __type__: `string`
+
+## Authors
+
 
 [Armin Grodon](https://github.com/x4121)
 [Markus Schmid](https://github.com/h0raz)
 
-Changelog
-=========
+## Changelog
+
 0.1.0 - Initial release.
 
-License
-=======
+## License
+
 
 This software is released under the MIT License (see `LICENSE`).
