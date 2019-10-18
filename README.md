@@ -25,7 +25,7 @@ To copy the generic `Amazon Linux` image:
 module "amazon_linux" {
   name   = "amzn2-ami-hvm-*-x86_64-gp2"
   tags   = "${local.common_tags}"
-  source = "git@github.com:ryte/INF-tf-amicopy.git?ref=v0.1.0"
+  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.1.0"
 }
 ```
 or the ecs optimized version
@@ -35,7 +35,7 @@ or the ecs optimized version
 module "ecs_optimized" {
   name   = "amzn-ami-*.f-amazon-ecs-optimized"
   tags   = "${local.common_tags}"
-  source = "git@github.com:ryte/INF-tf-amicopy.git?ref=v0.1.0"
+  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.1.0"
 }
 ```
 

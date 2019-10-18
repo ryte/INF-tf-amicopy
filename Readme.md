@@ -24,7 +24,7 @@ and currently maintained by the [INF](https://github.com/orgs/ryte/teams/inf).
 module "ecs_optimized" {
   name   = "amzn-ami-*.f-amazon-ecs-optimized"
   tags   = "${local.common_tags}"
-  source = "git@github.com:ryte/INF-tf-amicopy.git?ref=v0.1.0"
+  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.1.0"
 }
 ```
 
