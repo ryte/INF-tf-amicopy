@@ -6,7 +6,7 @@ every EC2 machine is built on top of that ami, so every machine has the same bas
 
 
 This project is [internal open source](https://en.wikipedia.org/wiki/Inner_source)
-and currently maintained by the [INF](https://github.com/orgs/onpage-org/teams/inf).
+and currently maintained by the [INF](https://github.com/orgs/ryte/teams/inf).
 
 ## Module Input Variables
 
@@ -24,7 +24,7 @@ and currently maintained by the [INF](https://github.com/orgs/onpage-org/teams/i
 module "ecs_optimized" {
   name   = "amzn-ami-*.f-amazon-ecs-optimized"
   tags   = "${local.common_tags}"
-  source = "git@github.com:onpage-org/INF-tf-amicopy.git?ref=v0.1.0"
+  source = "git@github.com:ryte/INF-tf-amicopy.git?ref=v0.1.0"
 }
 ```
 
