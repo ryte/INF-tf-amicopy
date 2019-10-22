@@ -1,4 +1,5 @@
-data "aws_region" "current" {}
+data "aws_region" "current" {
+}
 
 data "aws_ami" "ami" {
   filter {
@@ -13,7 +14,7 @@ data "aws_ami" "ami" {
 
   filter {
     name   = "name"
-    values = ["${var.name}"]
+    values = [var.name]
   }
 
   most_recent = true
@@ -23,8 +24,9 @@ data "aws_ami" "ami" {
 resource "aws_ami_copy" "ami" {
   description       = "Local copy of ${data.aws_ami.ami.id}"
   encrypted         = true
-  name              = "${data.aws_ami.ami.id}"
-  source_ami_id     = "${data.aws_ami.ami.id}"
-  source_ami_region = "${data.aws_region.current.id}"
-  tags              = "${local.tags}"
+  name              = data.aws_ami.ami.id
+  source_ami_id     = data.aws_ami.ami.id
+  source_ami_region = data.aws_region.current.id
+  tags              = local.tags
 }
+
