@@ -1,23 +1,23 @@
-INF-tf-amicopy
-===========
+# INF-tf-amicopy
 
-Terraform module to clone official AMIs to ensure reproducible builds.
+Terraform module for cloning the current aws AMI
+every EC2 machine is built on top of that ami, so every machine has the same base image
 
 
 This project is [internal open source](https://en.wikipedia.org/wiki/Inner_source)
 and currently maintained by the [INF](https://github.com/orgs/ryte/teams/inf).
 
-Module Input Variables
-----------------------
+## Module Input Variables
 
-#### Required
-- `name` - Regular expression that matches the AMI to copy
+-  `name`
+    -  __description__: the ami name to copy, special characters like "*" are allowed
+    -  __type__: `string`
+-  `tags`
+    -  __description__: a map of key-value pairs which are used as tags for all ressources within the module (and allow tags)
+    -  __type__: `map`
+    -  __default__: {}
 
-#### Optional
-None
-
-Usage
------
+## Usage
 
 To copy the generic `Amazon Linux` image:
 ```hcl
@@ -39,21 +39,23 @@ module "ecs_optimized" {
 }
 ```
 
-Outputs
-=======
-`id` - *(String)* id of the new AMI
+## Outputs
 
-Authors
-=======
+-  `id`
+    -  __description__: the ami id, from the ami which is created within the account and the current region
+    -  __type__: `string`
+
+## Authors
+
 
 - [Armin Grodon](https://github.com/x4121)
 - [Markus Schmid](https://github.com/h0raz)
 
-Changelog
-=========
+## Changelog
+
 - 0.1.0 - Initial release.
 
-License
-=======
+## License
+
 
 This software is released under the MIT License (see `LICENSE`).
