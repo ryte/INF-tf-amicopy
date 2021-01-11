@@ -9,6 +9,10 @@ and currently maintained by the [INF](https://github.com/orgs/ryte/teams/inf).
 
 ## Module Input Variables
 
+- `environment`
+    -  __description__: the environment this ami is copied to (e.g. 'testing')
+    -  __type__: `string`
+
 -  `name`
     -  __description__: the ami name to copy, special characters like "*" are allowed
     -  __type__: `string`
@@ -25,7 +29,7 @@ To copy the generic `Amazon Linux` image:
 module "amazon_linux" {
   name   = "amzn2-ami-hvm-*-x86_64-gp2"
   tags   = local.common_tags
-  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.1.0"
+  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.2.1"
 }
 ```
 or the ecs optimized version
@@ -35,7 +39,7 @@ or the ecs optimized version
 module "ecs_optimized" {
   name   = "amzn-ami-*.f-amazon-ecs-optimized"
   tags   = local.common_tags
-  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.1.0"
+  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.2.1"
 }
 ```
 
@@ -53,10 +57,10 @@ module "ecs_optimized" {
 
 ## Changelog
 
+- 0.2.1 - Add variable `environment` instead of reading from tags
 - 0.2.0 - Upgrade to terraform 0.12.x
 - 0.1.0 - Initial release.
 
 ## License
-
 
 This software is released under the MIT License (see `LICENSE`).

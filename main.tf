@@ -29,4 +29,3 @@ resource "aws_ami_copy" "ami" {
   source_ami_region = data.aws_region.current.id
   tags              = local.tags
 }
-

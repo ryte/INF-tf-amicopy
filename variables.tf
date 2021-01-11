@@ -7,3 +7,5 @@ variable "tags" {
   default     = {}
 }
 
+variable "environment" {
+}
