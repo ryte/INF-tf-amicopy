@@ -1,5 +1,5 @@
 locals {
-  name = "${var.tags["Environment"]}-amicopy"
+  name = "${var.environment}-amicopy"
 }
 
 locals {
@@ -11,4 +11,3 @@ locals {
     },
   )
 }
-
