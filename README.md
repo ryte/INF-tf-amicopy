@@ -27,9 +27,10 @@ To copy the generic `Amazon Linux` image:
 ```hcl
 
 module "amazon_linux" {
-  name   = "amzn2-ami-hvm-*-x86_64-gp2"
-  tags   = local.common_tags
-  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.2.1"
+  name        = "amzn2-ami-hvm-*-x86_64-gp2"
+  tags        = local.common_tags
+  environment = var.environment
+  source      = "github.com/ryte/INF-tf-amicopy.git?ref=v0.2.1"
 }
 ```
 or the ecs optimized version
@@ -37,9 +38,10 @@ or the ecs optimized version
 ```hcl
 
 module "ecs_optimized" {
-  name   = "amzn-ami-*.f-amazon-ecs-optimized"
-  tags   = local.common_tags
-  source = "github.com/ryte/INF-tf-amicopy.git?ref=v0.2.1"
+  name        = "amzn-ami-*.f-amazon-ecs-optimized"
+  tags        = local.common_tags
+  environment = var.environment
+  source      = "github.com/ryte/INF-tf-amicopy.git?ref=v0.2.1"
 }
 ```
 
