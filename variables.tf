@@ -1,4 +1,6 @@
 variable "name" {
+  type        = string
+  description = "the ami name to copy, special characters like '*' are allowed"
 }
 
 variable "tags" {
@@ -8,4 +10,6 @@ variable "tags" {
 }
 
 variable "environment" {
+  type        = string
+  description = "the environment this ami is copied to (e.g. 'testing')"
 }
