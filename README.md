@@ -7,20 +7,56 @@ every EC2 machine is built on top of that ami, so every machine has the same bas
 This project is [internal open source](https://en.wikipedia.org/wiki/Inner_source)
 and currently maintained by the [INF](https://github.com/orgs/ryte/teams/inf).
 
-## Module Input Variables
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
 
-- `environment`
-    -  __description__: the environment this ami is copied to (e.g. 'testing')
-    -  __type__: `string`
+The following requirements are needed by this module:
 
--  `name`
-    -  __description__: the ami name to copy, special characters like "*" are allowed
-    -  __type__: `string`
--  `tags`
-    -  __description__: a map of key-value pairs which are used as tags for all ressources within the module (and allow tags)
-    -  __type__: `map`
-    -  __default__: {}
+- terraform (>= 0.12)
 
+## Providers
+
+The following providers are used by this module:
+
+- aws
+
+## Required Inputs
+
+The following input variables are required:
+
+### environment
+
+Description: the environment this ami is copied to (e.g. 'testing')
+
+Type: `string`
+
+### name
+
+Description: the ami name to copy, special characters like '\*' are allowed
+
+Type: `string`
+
+## Optional Inputs
+
+The following input variables are optional (have default values):
+
+### tags
+
+Description: common tags to add to the ressources
+
+Type: `map(string)`
+
+Default: `{}`
+
+## Outputs
+
+The following outputs are exported:
+
+### id
+
+Description: the ami id, from the ami which is created within the account and the current region
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Usage
 
 To copy the generic `Amazon Linux` image:
@@ -45,14 +81,7 @@ module "ecs_optimized" {
 }
 ```
 
-## Outputs
-
--  `id`
-    -  __description__: the ami id, from the ami which is created within the account and the current region
-    -  __type__: `string`
-
 ## Authors
-
 
 - [Armin Grodon](https://github.com/x4121)
 - [Markus Schmid](https://github.com/h0raz)
